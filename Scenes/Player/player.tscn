@@ -1,0 +1,140 @@
+[gd_scene load_steps=12 format=3 uid="uid://bwnmaok0huh34"]
+
+[ext_resource type="Script" uid="uid://bj6rp3jrca052" path="res://Scenes/Player/player.gd" id="1_ki7sc"]
+[ext_resource type="Texture2D" uid="uid://6x3ghy3e2l5n" path="res://Graphics/CharachterSprite.png" id="2_dbbyu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npiri"]
+size = Vector2(42, 890)
+
+[sub_resource type="Animation" id="Animation_ui2ar"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1mdfv"]
+resource_name = "WalkDown"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_e6jh2"]
+resource_name = "Walk_Right"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 6, 8, 6]
+}
+
+[sub_resource type="Animation" id="Animation_6vwau"]
+resource_name = "Walk_Up"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [3, 4, 5, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_6asmn"]
+resource_name = "WalkLeft"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 9, 11, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6jg8e"]
+_data = {
+&"RESET": SubResource("Animation_ui2ar"),
+&"WalkDown": SubResource("Animation_1mdfv"),
+&"Walk_Left": SubResource("Animation_e6jh2"),
+&"Walk_Up": SubResource("Animation_6vwau"),
+&"Walk_right": SubResource("Animation_6asmn")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tqev"]
+size = Vector2(5.5, 6.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikurr"]
+size = Vector2(6, 6)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ki7sc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_dbbyu")
+hframes = 3
+vframes = 4
+
+[node name="view" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="view"]
+position = Vector2(0, 568)
+shape = SubResource("RectangleShape2D_npiri")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6jg8e")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7tqev")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="BodyCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyCollision"]
+shape = SubResource("RectangleShape2D_ikurr")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[connection signal="area_entered" from="view" to="." method="_on_view_area_entered"]
+[connection signal="area_exited" from="view" to="." method="_on_view_area_exited"]
+[connection signal="area_entered" from="BodyCollision" to="." method="_on_body_collision_area_entered"]

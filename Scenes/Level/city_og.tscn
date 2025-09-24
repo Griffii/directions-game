@@ -1,0 +1,280 @@
+[gd_scene load_steps=11 format=3 uid="uid://k27ffs36i1rc"]
+
+[ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_iglq0"]
+[ext_resource type="Texture2D" uid="uid://gydek451unbl" path="res://Graphics/MySprites/City2.0/BlankTown.png" id="2_in4fq"]
+[ext_resource type="Texture2D" uid="uid://bap2eeaf248i5" path="res://Graphics/MySprites/City2.0/Hospital.png" id="4_trnql"]
+[ext_resource type="Texture2D" uid="uid://vxnm805cpfqa" path="res://Graphics/MySprites/City2.0/Supermarket.png" id="5_3d284"]
+[ext_resource type="PackedScene" uid="uid://dc832o2pihxmn" path="res://Scenes/Object/move_m_image.tscn" id="6_152ae"]
+[ext_resource type="PackedScene" uid="uid://d01bedihw8m7t" path="res://Scenes/Object/pic_create_a_level.tscn" id="6_j8jl2"]
+[ext_resource type="Texture2D" uid="uid://bo15ctbibhoih" path="res://Graphics/MySprites/City2.0/Firestation.png" id="6_v7dpt"]
+[ext_resource type="Texture2D" uid="uid://bd3bsfxg1s036" path="res://Graphics/MySprites/City2.0/PoliceStation.png" id="7_x4vgk"]
+[ext_resource type="Texture2D" uid="uid://mih7y6boqm85" path="res://Graphics/MySprites/City2.0/School.png" id="8_g4t4t"]
+[ext_resource type="Texture2D" uid="uid://doyqfsdrf7yc1" path="res://Graphics/MySprites/City2.0/PostOffice.png" id="9_gm1n0"]
+
+[node name="City OG" instance=ExtResource("1_iglq0")]
+
+[node name="map" parent="." index="1"]
+position = Vector2(496, 388)
+scale = Vector2(0.969819, 1.33698)
+texture = ExtResource("2_in4fq")
+
+[node name="Player" parent="." index="2"]
+position = Vector2(38.4399, 41.207)
+
+[node name="buttonbox" parent="Control" index="1"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 392.0
+offset_right = 388.0
+offset_bottom = 496.0
+
+[node name="Hospital" parent="Left Panel" index="0" instance=ExtResource("6_j8jl2")]
+layout_mode = 0
+offset_left = 659.0
+offset_top = 450.0
+offset_right = 880.0
+offset_bottom = 626.0
+texture = ExtResource("4_trnql")
+
+[node name="Supermarket" parent="Left Panel" index="1" instance=ExtResource("6_j8jl2")]
+layout_mode = 0
+offset_left = 387.0
+offset_top = 464.0
+offset_right = 566.0
+offset_bottom = 611.0
+texture = ExtResource("5_3d284")
+
+[node name="Fire Station" parent="Left Panel" index="2" instance=ExtResource("6_j8jl2")]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 424.0
+offset_right = 289.0
+offset_bottom = 639.0
+texture = ExtResource("6_v7dpt")
+
+[node name="Police Station" parent="Left Panel" index="3" instance=ExtResource("6_j8jl2")]
+layout_mode = 0
+offset_left = 675.0
+offset_top = 121.0
+offset_right = 874.0
+offset_bottom = 302.0
+texture = ExtResource("7_x4vgk")
+
+[node name="School" parent="Left Panel" index="4" instance=ExtResource("6_j8jl2")]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 116.0
+offset_right = 289.0
+offset_bottom = 310.0
+texture = ExtResource("8_g4t4t")
+
+[node name="Post Office" parent="Left Panel" index="5" instance=ExtResource("6_j8jl2")]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 139.0
+offset_right = 562.0
+offset_bottom = 302.0
+texture = ExtResource("9_gm1n0")
+
+[node name="MoveMarker" parent="Left Panel" index="6" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 919.0
+offset_top = 689.0
+offset_right = 934.0
+offset_bottom = 704.0
+
+[node name="MoveMarker2" parent="Left Panel" index="7" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 926.0
+offset_top = 537.0
+offset_right = 941.0
+offset_bottom = 552.0
+
+[node name="MoveMarker3" parent="Left Panel" index="8" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 925.0
+offset_top = 357.0
+offset_right = 940.0
+offset_bottom = 372.0
+
+[node name="MoveMarker4" parent="Left Panel" index="9" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 923.0
+offset_top = 198.0
+offset_right = 938.0
+offset_bottom = 213.0
+
+[node name="MoveMarker5" parent="Left Panel" index="10" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 923.0
+offset_top = 51.0
+offset_right = 938.0
+offset_bottom = 66.0
+
+[node name="MoveMarker6" parent="Left Panel" index="11" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 51.0
+offset_right = 791.0
+offset_bottom = 66.0
+
+[node name="MoveMarker7" parent="Left Panel" index="12" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 51.0
+offset_right = 623.0
+offset_bottom = 66.0
+
+[node name="MoveMarker8" parent="Left Panel" index="13" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 50.0
+offset_right = 486.0
+offset_bottom = 65.0
+
+[node name="MoveMarker9" parent="Left Panel" index="14" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 52.0
+offset_right = 349.0
+offset_bottom = 67.0
+
+[node name="MoveMarker10" parent="Left Panel" index="15" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 50.0
+offset_right = 192.0
+offset_bottom = 65.0
+
+[node name="MoveMarker11" parent="Left Panel" index="16" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 49.0
+offset_right = 37.0
+offset_bottom = 64.0
+
+[node name="MoveMarker12" parent="Left Panel" index="17" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 198.0
+offset_right = 42.0
+offset_bottom = 213.0
+
+[node name="MoveMarker13" parent="Left Panel" index="18" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 197.0
+offset_right = 350.0
+offset_bottom = 212.0
+
+[node name="MoveMarker14" parent="Left Panel" index="19" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 202.0
+offset_right = 624.0
+offset_bottom = 217.0
+
+[node name="MoveMarker15" parent="Left Panel" index="20" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 353.0
+offset_right = 43.0
+offset_bottom = 368.0
+
+[node name="MoveMarker16" parent="Left Panel" index="21" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 521.0
+offset_right = 39.0
+offset_bottom = 536.0
+
+[node name="MoveMarker17" parent="Left Panel" index="22" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 691.0
+offset_right = 48.0
+offset_bottom = 706.0
+
+[node name="MoveMarker18" parent="Left Panel" index="23" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 696.0
+offset_right = 194.0
+offset_bottom = 711.0
+
+[node name="MoveMarker19" parent="Left Panel" index="24" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 697.0
+offset_right = 347.0
+offset_bottom = 712.0
+
+[node name="MoveMarker20" parent="Left Panel" index="25" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 530.0
+offset_right = 350.0
+offset_bottom = 545.0
+
+[node name="MoveMarker21" parent="Left Panel" index="26" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 357.0
+offset_right = 196.0
+offset_bottom = 372.0
+
+[node name="MoveMarker22" parent="Left Panel" index="27" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 354.0
+offset_right = 346.0
+offset_bottom = 369.0
+
+[node name="MoveMarker23" parent="Left Panel" index="28" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 354.0
+offset_right = 484.0
+offset_bottom = 369.0
+
+[node name="MoveMarker24" parent="Left Panel" index="29" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 692.0
+offset_right = 485.0
+offset_bottom = 707.0
+
+[node name="MoveMarker25" parent="Left Panel" index="30" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 606.0
+offset_top = 357.0
+offset_right = 621.0
+offset_bottom = 372.0
+
+[node name="MoveMarker26" parent="Left Panel" index="31" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 614.0
+offset_top = 695.0
+offset_right = 629.0
+offset_bottom = 710.0
+
+[node name="MoveMarker27" parent="Left Panel" index="32" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 533.0
+offset_right = 620.0
+offset_bottom = 548.0
+
+[node name="MoveMarker28" parent="Left Panel" index="33" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 763.0
+offset_top = 358.0
+offset_right = 778.0
+offset_bottom = 373.0
+
+[node name="MoveMarker29" parent="Left Panel" index="34" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 770.0
+offset_top = 695.0
+offset_right = 785.0
+offset_bottom = 710.0

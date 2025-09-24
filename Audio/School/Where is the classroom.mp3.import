@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brfrw1t74mvw8"
+path="res://.godot/imported/Where is the classroom.mp3-6e3ff33e0da25cc2af489e17f163ddb8.mp3str"
+
+[deps]
+
+source_file="res://Audio/School/Where is the classroom.mp3"
+dest_files=["res://.godot/imported/Where is the classroom.mp3-6e3ff33e0da25cc2af489e17f163ddb8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

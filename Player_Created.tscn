@@ -1,0 +1,721 @@
+[gd_scene load_steps=35 format=3 uid="uid://bg083qx8x1i2"]
+
+[ext_resource type="Script" uid="uid://dhloyaomtfb31" path="res://Scenes/Level/BtownV2.gd" id="1_gg0ed"]
+[ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="2_gg0ed"]
+[ext_resource type="Texture2D" uid="uid://p6b4ybglkfln" path="res://Graphics/MySprites/City2.0/BTownV2.png" id="3_fm52a"]
+[ext_resource type="PackedScene" uid="uid://bwnmaok0huh34" path="res://Scenes/Player/player.tscn" id="4_eqwah"]
+[ext_resource type="PackedScene" uid="uid://bhsnap3g2nlqe" path="res://Scenes/Object/move_marker.tscn" id="6_0alwa"]
+[ext_resource type="PackedScene" uid="uid://dj0i7uvgxu4nm" path="res://Scenes/Object/win_message.tscn" id="8_fcsnn"]
+[ext_resource type="FontFile" uid="uid://cepgij1qabkrs" path="res://assets/fonts/BadComic-Regular.ttf" id="10_wpb7y"]
+[ext_resource type="AudioStream" uid="uid://irhenqr4qcub" path="res://assets/sfx/fanfare.mp3" id="11_lgmi7"]
+[ext_resource type="Script" uid="uid://cjead35g74hmp" path="res://Scenes/Object/mapPanel.gd" id="12_onrwb"]
+[ext_resource type="PackedScene" uid="uid://dc832o2pihxmn" path="res://Scenes/Object/move_m_image.tscn" id="13_2nrns"]
+[ext_resource type="PackedScene" uid="uid://d01bedihw8m7t" path="res://Scenes/Object/pic_create_a_level.tscn" id="16_2yxig"]
+[ext_resource type="Texture2D" uid="uid://c36vg45x7vsyh" path="res://Graphics/MySprites/City2.0/Park1.png" id="17_eqwah"]
+[ext_resource type="Texture2D" uid="uid://doyqfsdrf7yc1" path="res://Graphics/MySprites/City2.0/PostOffice.png" id="17_wytig"]
+[ext_resource type="Texture2D" uid="uid://bae47yjxnx2eu" path="res://Graphics/MySprites/City2.0/Bookstore.png" id="20_cl13c"]
+[ext_resource type="Texture2D" uid="uid://cssg5d55sakp2" path="res://assets/icons/PremadeButtons_XRed.png" id="20_q76tl"]
+[ext_resource type="Texture2D" uid="uid://eefhms0uwxi8" path="res://assets/icons/PremadeButtons_XWhiteOutline.png" id="21_gy1fr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p0st5"]
+bg_color = Color(1, 1, 1, 0.937255)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.80654, 0.51769, 0.926534, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_srnm0"]
+line_spacing = 10.0
+font_size = 120
+font_color = Color(1, 0.476169, 0.808386, 1)
+outline_size = 10
+outline_color = Color(0.976695, 6.31475e-05, 0.733849, 1)
+shadow_size = 5
+shadow_color = Color(0.0117647, 0.0117647, 0.0117647, 0.701961)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="Animation" id="Animation_srnm0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%win-sfx:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_p0st5"]
+resource_name = "spawn"
+length = 2.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.78, 1.98),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%win-sfx:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5pjge"]
+_data = {
+&"RESET": SubResource("Animation_srnm0"),
+&"spawn": SubResource("Animation_p0st5")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_gklj6"]
+font = ExtResource("10_wpb7y")
+font_size = 50
+font_color = Color(0.145098, 0.145098, 0.145098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nig0n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o1g1d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ve4c"]
+bg_color = Color(0.36065, 0.702495, 0.968247, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xerb2"]
+bg_color = Color(0.105888, 0.506855, 0.771274, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toevt"]
+bg_color = Color(0.247337, 0.648463, 0.940948, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsyjl"]
+bg_color = Color(0.36065, 0.702495, 0.968247, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx3j0"]
+bg_color = Color(0.105888, 0.506855, 0.771274, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ah6f1"]
+bg_color = Color(0.247337, 0.648463, 0.940948, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6f0v8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jma8p"]
+bg_color = Color(0.36065, 0.702495, 0.968247, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqopy"]
+bg_color = Color(0.105888, 0.506855, 0.771274, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbet1"]
+bg_color = Color(0.247337, 0.648463, 0.940948, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_bottom_right = 20
+
+[node name="BaseLevel" type="Node2D"]
+script = ExtResource("1_gg0ed")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(683, 384)
+texture = ExtResource("2_gg0ed")
+
+[node name="map" type="Sprite2D" parent="."]
+position = Vector2(491, 384)
+scale = Vector2(0.969819, 1.36976)
+texture = ExtResource("3_fm52a")
+
+[node name="Player" parent="." instance=ExtResource("4_eqwah")]
+position = Vector2(578, 352)
+scale = Vector2(0.7, 0.7)
+
+[node name="MoveMarkers" type="Node2D" parent="."]
+
+[node name="MoveMarker" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(818, 727)
+
+[node name="MoveMarker2" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(814, 595)
+
+[node name="MoveMarker3" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(819, 481)
+
+[node name="MoveMarker4" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(933, 358)
+
+[node name="MoveMarker5" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(815, 364)
+
+[node name="MoveMarker6" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(720, 364)
+
+[node name="MoveMarker7" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(617, 364)
+
+[node name="MoveMarker8" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(484, 367)
+
+[node name="MoveMarker9" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(348, 363)
+
+[node name="MoveMarker10" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(940, 205)
+
+[node name="MoveMarker11" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(936, 55)
+
+[node name="MoveMarker12" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(782, 55)
+
+[node name="MoveMarker14" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(618, 53)
+
+[node name="MoveMarker15" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(482, 55)
+
+[node name="MoveMarker16" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(346, 49)
+
+[node name="MoveMarker17" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(190, 47)
+
+[node name="MoveMarker18" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(37, 52)
+
+[node name="MoveMarker19" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(32, 202)
+
+[node name="MoveMarker20" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(347, 206)
+
+[node name="MoveMarker21" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(618, 210)
+
+[node name="MoveMarker22" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(35, 368)
+
+[node name="MoveMarker23" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(33, 542)
+
+[node name="MoveMarker24" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(344, 535)
+
+[node name="MoveMarker25" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(618, 537)
+
+[node name="MoveMarker26" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(29, 714)
+
+[node name="MoveMarker27" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(186, 714)
+
+[node name="MoveMarker28" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(345, 714)
+
+[node name="MoveMarker29" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(495, 715)
+
+[node name="MoveMarker30" parent="MoveMarkers" instance=ExtResource("6_0alwa")]
+position = Vector2(620, 712)
+
+[node name="locations" type="Node2D" parent="."]
+
+[node name="WinMessage" parent="." instance=ExtResource("8_fcsnn")]
+unique_name_in_owner = true
+
+[node name="WinMessage-New2" type="Label" parent="WinMessage"]
+z_index = 1
+offset_left = 99.0
+offset_top = 133.0
+offset_right = 1309.0
+offset_bottom = 605.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(581, 240)
+theme_override_fonts/font = ExtResource("10_wpb7y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p0st5")
+text = "Congratulations!
+You Made It!"
+label_settings = SubResource("LabelSettings_srnm0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="win-sfx2" type="AudioStreamPlayer2D" parent="WinMessage"]
+unique_name_in_owner = true
+stream = ExtResource("11_lgmi7")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="WinMessage"]
+root_node = NodePath("../WinMessage-New")
+libraries = {
+&"": SubResource("AnimationLibrary_5pjge")
+}
+
+[node name="UI_Layer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 966.0
+offset_top = 27.0
+offset_right = 1348.0
+offset_bottom = 759.0
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_Layer"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -354.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Sentence_Box" type="VBoxContainer" parent="UI_Layer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Sentence Container" type="CenterContainer" parent="UI_Layer/MarginContainer/Sentence_Box"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="UI_Layer/MarginContainer/Sentence_Box/Sentence Container"]
+custom_minimum_size = Vector2(310, 0)
+layout_mode = 2
+text = "Enter Sentence"
+label_settings = SubResource("LabelSettings_gklj6")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Buttons_Box" type="VBoxContainer" parent="UI_Layer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Move Marker image" type="CheckButton" parent="UI_Layer/MarginContainer/Buttons_Box"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_wpb7y")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nig0n")
+text = "Move Marker"
+
+[node name="Directions_Button_Container" type="MarginContainer" parent="UI_Layer/MarginContainer/Buttons_Box"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI_Layer/MarginContainer/Buttons_Box/Directions_Button_Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Go_Straight" type="Button" parent="UI_Layer/MarginContainer/Buttons_Box/Directions_Button_Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("10_wpb7y")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o1g1d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ve4c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xerb2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_toevt")
+action_mode = 0
+text = "Go Straight"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_Layer/MarginContainer/Buttons_Box/Directions_Button_Container/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Turn_Left" type="Button" parent="UI_Layer/MarginContainer/Buttons_Box/Directions_Button_Container/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(175, 85)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("10_wpb7y")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o1g1d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jsyjl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qx3j0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ah6f1")
+action_mode = 0
+text = "Turn Left"
+
+[node name="Turn_Right" type="Button" parent="UI_Layer/MarginContainer/Buttons_Box/Directions_Button_Container/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(175, 85)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("10_wpb7y")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6f0v8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jma8p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mqopy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lbet1")
+action_mode = 0
+text = "Turn Right"
+
+[node name="Left Panel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 979.0
+offset_bottom = 756.0
+script = ExtResource("12_onrwb")
+
+[node name="MoveMarker" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 712.0
+offset_right = 818.0
+offset_bottom = 727.0
+
+[node name="MoveMarker2" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 799.0
+offset_top = 580.0
+offset_right = 814.0
+offset_bottom = 595.0
+
+[node name="MoveMarker3" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 804.0
+offset_top = 466.0
+offset_right = 819.0
+offset_bottom = 481.0
+
+[node name="MoveMarker4" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 918.0
+offset_top = 343.0
+offset_right = 933.0
+offset_bottom = 358.0
+
+[node name="MoveMarker5" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 349.0
+offset_right = 815.0
+offset_bottom = 364.0
+
+[node name="MoveMarker6" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 705.0
+offset_top = 349.0
+offset_right = 720.0
+offset_bottom = 364.0
+
+[node name="MoveMarker7" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 602.0
+offset_top = 349.0
+offset_right = 617.0
+offset_bottom = 364.0
+
+[node name="MoveMarker8" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 352.0
+offset_right = 484.0
+offset_bottom = 367.0
+
+[node name="MoveMarker9" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 348.0
+offset_right = 348.0
+offset_bottom = 363.0
+
+[node name="MoveMarker10" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 925.0
+offset_top = 190.0
+offset_right = 940.0
+offset_bottom = 205.0
+
+[node name="MoveMarker11" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 921.0
+offset_top = 40.0
+offset_right = 936.0
+offset_bottom = 55.0
+
+[node name="MoveMarker12" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 767.0
+offset_top = 40.0
+offset_right = 782.0
+offset_bottom = 55.0
+
+[node name="MoveMarker14" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 603.0
+offset_top = 38.0
+offset_right = 618.0
+offset_bottom = 53.0
+
+[node name="MoveMarker15" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 40.0
+offset_right = 482.0
+offset_bottom = 55.0
+
+[node name="MoveMarker16" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 34.0
+offset_right = 346.0
+offset_bottom = 49.0
+
+[node name="MoveMarker17" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 32.0
+offset_right = 190.0
+offset_bottom = 47.0
+
+[node name="MoveMarker18" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 37.0
+offset_right = 37.0
+offset_bottom = 52.0
+
+[node name="MoveMarker19" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 187.0
+offset_right = 32.0
+offset_bottom = 202.0
+
+[node name="MoveMarker20" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 191.0
+offset_right = 347.0
+offset_bottom = 206.0
+
+[node name="MoveMarker21" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 603.0
+offset_top = 195.0
+offset_right = 618.0
+offset_bottom = 210.0
+
+[node name="MoveMarker22" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 353.0
+offset_right = 35.0
+offset_bottom = 368.0
+
+[node name="MoveMarker23" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 527.0
+offset_right = 33.0
+offset_bottom = 542.0
+
+[node name="MoveMarker24" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 520.0
+offset_right = 344.0
+offset_bottom = 535.0
+
+[node name="MoveMarker25" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 603.0
+offset_top = 522.0
+offset_right = 618.0
+offset_bottom = 537.0
+
+[node name="MoveMarker26" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 699.0
+offset_right = 29.0
+offset_bottom = 714.0
+
+[node name="MoveMarker27" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 699.0
+offset_right = 186.0
+offset_bottom = 714.0
+
+[node name="MoveMarker28" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 699.0
+offset_right = 345.0
+offset_bottom = 714.0
+
+[node name="MoveMarker29" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 700.0
+offset_right = 495.0
+offset_bottom = 715.0
+
+[node name="MoveMarker30" parent="Left Panel" instance=ExtResource("13_2nrns")]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 697.0
+offset_right = 620.0
+offset_bottom = 712.0
+
+[node name="Park" parent="Left Panel" instance=ExtResource("16_2yxig")]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 121.0
+offset_right = 284.0
+offset_bottom = 271.0
+texture = ExtResource("17_eqwah")
+
+[node name="Post Office" parent="Left Panel" instance=ExtResource("16_2yxig")]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 407.0
+offset_right = 848.0
+offset_bottom = 557.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("17_wytig")
+
+[node name="Bookstore" parent="Left Panel" instance=ExtResource("16_2yxig")]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 405.0
+offset_right = 590.0
+offset_bottom = 555.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("20_cl13c")
+
+[node name="Close_Button" type="TextureButton" parent="."]
+offset_left = 1295.0
+offset_top = 4.0
+offset_right = 1561.0
+offset_bottom = 271.0
+scale = Vector2(0.25, 0.25)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("20_q76tl")
+texture_pressed = ExtResource("20_q76tl")
+texture_hover = ExtResource("21_gy1fr")
+
+[connection signal="toggled" from="UI_Layer/MarginContainer/Buttons_Box/Move Marker image" to="." method="_on_move_marker_image_toggled"]
+[connection signal="pressed" from="UI_Layer/MarginContainer/Buttons_Box/Directions_Button_Container/VBoxContainer/Go_Straight" to="Player" method="_on_go_straight_pressed"]
+[connection signal="pressed" from="UI_Layer/MarginContainer/Buttons_Box/Directions_Button_Container/VBoxContainer/HBoxContainer/Turn_Left" to="Player" method="_on_turn_left_pressed"]
+[connection signal="pressed" from="UI_Layer/MarginContainer/Buttons_Box/Directions_Button_Container/VBoxContainer/HBoxContainer/Turn_Right" to="Player" method="_on_turn_right_pressed"]
+[connection signal="pressed" from="Close_Button" to="." method="_on_menu_pressed"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhap0emlx7ptv"]
+
+[ext_resource type="Script" uid="uid://bjphsub3rl2ar" path="res://scripts/globals/Audio_Manager.gd" id="1_gsoef"]
+[ext_resource type="AudioStream" uid="uid://ck6r3s6ixbcjp" path="res://assets/sfx/click.ogg" id="1_xtful"]
+[ext_resource type="AudioStream" uid="uid://rdqi52gn47d8" path="res://assets/sfx/woodblock.ogg" id="2_gsoef"]
+
+[node name="AudioManager" type="CanvasLayer"]
+script = ExtResource("1_gsoef")
+
+[node name="hover_sfx" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("1_xtful")
+volume_db = 16.0
+
+[node name="click_sfx" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_gsoef")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc832o2pihxmn"]
+
+[ext_resource type="Texture2D" uid="uid://dymdcycfv5nhu" path="res://Graphics/MySprites/UI/MoveMarkerImage.png" id="1_yc7pq"]
+[ext_resource type="Script" uid="uid://bfbvamjyi31fl" path="res://Scenes/Object/moveM_Image.gd" id="2_qbp0r"]
+
+[node name="MoveMarker" type="TextureRect"]
+self_modulate = Color(1, 1, 1, 0.501961)
+offset_right = 15.0
+offset_bottom = 15.0
+mouse_default_cursor_shape = 2
+texture = ExtResource("1_yc7pq")
+script = ExtResource("2_qbp0r")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

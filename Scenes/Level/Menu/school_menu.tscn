@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://drostjga7rkwr"]
+
+[ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="1_2np4o"]
+[ext_resource type="Script" uid="uid://yqba3x48v80b" path="res://Scenes/Level/Menu/school_menu.gd" id="1_yq2eu"]
+[ext_resource type="Texture2D" uid="uid://d53wmvqf1tdi" path="res://Graphics/modified_school.png" id="2_p8lte"]
+[ext_resource type="Texture2D" uid="uid://dvepa0ygyi0xa" path="res://Graphics/MySprites/UI/Updated new School.png" id="4_4840k"]
+[ext_resource type="Texture2D" uid="uid://2j7k8h4xh5gc" path="res://Graphics/MySprites/School/My School.png" id="5_kipae"]
+[ext_resource type="FontFile" uid="uid://cepgij1qabkrs" path="res://assets/fonts/BadComic-Regular.ttf" id="6_0bmoh"]
+[ext_resource type="Texture2D" uid="uid://cssg5d55sakp2" path="res://assets/icons/PremadeButtons_XRed.png" id="6_jrtsj"]
+[ext_resource type="Texture2D" uid="uid://eefhms0uwxi8" path="res://assets/icons/PremadeButtons_XWhiteOutline.png" id="7_0bmoh"]
+
+[node name="School Menu" type="Node2D"]
+script = ExtResource("1_yq2eu")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_2np4o")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+offset_right = 1361.0
+offset_bottom = 760.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="FlowContainer" type="FlowContainer" parent="Control/MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 25
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Control/MarginContainer/CenterContainer/FlowContainer"]
+custom_minimum_size = Vector2(250, 125)
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 2
+
+[node name="SchoolMap1" type="TextureButton" parent="Control/MarginContainer/CenterContainer/FlowContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 2
+texture_normal = ExtResource("2_p8lte")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SchoolMap2" type="TextureButton" parent="Control/MarginContainer/CenterContainer/FlowContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 2
+texture_normal = ExtResource("4_4840k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SchoolMap3" type="TextureButton" parent="Control/MarginContainer/CenterContainer/FlowContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 2
+texture_normal = ExtResource("5_kipae")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_0bmoh")
+theme_override_font_sizes/font_size = 80
+text = "Choose a Level"
+
+[node name="Close_Button" type="TextureButton" parent="Control"]
+offset_left = 1295.0
+offset_top = 4.0
+offset_right = 1561.0
+offset_bottom = 271.0
+scale = Vector2(0.25, 0.25)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_jrtsj")
+texture_pressed = ExtResource("6_jrtsj")
+texture_hover = ExtResource("7_0bmoh")
+
+[connection signal="mouse_entered" from="Control/MarginContainer/CenterContainer/FlowContainer/GridContainer/SchoolMap1" to="." method="_on_school_map_1_mouse_entered"]
+[connection signal="mouse_exited" from="Control/MarginContainer/CenterContainer/FlowContainer/GridContainer/SchoolMap1" to="." method="_on_school_map_1_mouse_exited"]
+[connection signal="pressed" from="Control/MarginContainer/CenterContainer/FlowContainer/GridContainer/SchoolMap1" to="." method="_on_og_school_pressed"]
+[connection signal="mouse_entered" from="Control/MarginContainer/CenterContainer/FlowContainer/GridContainer/SchoolMap2" to="." method="_on_school_map_2_mouse_entered"]
+[connection signal="mouse_exited" from="Control/MarginContainer/CenterContainer/FlowContainer/GridContainer/SchoolMap2" to="." method="_on_school_map_2_mouse_exited"]
+[connection signal="pressed" from="Control/MarginContainer/CenterContainer/FlowContainer/GridContainer/SchoolMap2" to="." method="_on_new_school_pressed"]
+[connection signal="mouse_entered" from="Control/MarginContainer/CenterContainer/FlowContainer/SchoolMap3" to="." method="_on_school_map_3_mouse_entered"]
+[connection signal="mouse_exited" from="Control/MarginContainer/CenterContainer/FlowContainer/SchoolMap3" to="." method="_on_school_map_3_mouse_exited"]
+[connection signal="pressed" from="Control/MarginContainer/CenterContainer/FlowContainer/SchoolMap3" to="." method="_on_lets_try_map_pressed"]
+[connection signal="pressed" from="Control/Close_Button" to="." method="_on_menu_pressed"]

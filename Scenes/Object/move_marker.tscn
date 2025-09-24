@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhsnap3g2nlqe"]
+
+[ext_resource type="Script" uid="uid://cifelhg185e2o" path="res://Scenes/Object/move_marker.gd" id="1_ddm8v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_847bo"]
+
+[node name="MoveMarker" type="Area2D"]
+script = ExtResource("1_ddm8v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_847bo")

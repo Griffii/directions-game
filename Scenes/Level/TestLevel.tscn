@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnl2joktgxrnj"]
+
+[ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_wrptw"]
+[ext_resource type="PackedScene" uid="uid://bhsnap3g2nlqe" path="res://Scenes/Object/move_marker.tscn" id="2_cy8ee"]
+[ext_resource type="Script" uid="uid://bbnychk81mmaa" path="res://Scenes/Level/TestLevel.gd" id="2_gedfb"]
+[ext_resource type="PackedScene" uid="uid://couad5h3svcls" path="res://Scenes/Object/location.tscn" id="3_juc0v"]
+
+[node name="BaseLevel" instance=ExtResource("1_wrptw")]
+position = Vector2(7, 1)
+script = ExtResource("2_gedfb")
+
+[node name="Player" parent="." index="2"]
+scale = Vector2(0.5, 0.5)
+
+[node name="MoveMarker" parent="MoveMarkers" index="0" instance=ExtResource("2_cy8ee")]
+position = Vector2(256, 158)
+
+[node name="MoveMarker2" parent="MoveMarkers" index="1" instance=ExtResource("2_cy8ee")]
+position = Vector2(336.562, 157.336)
+
+[node name="MoveMarker3" parent="MoveMarkers" index="2" instance=ExtResource("2_cy8ee")]
+position = Vector2(375.856, 158.584)
+
+[node name="MoveMarker4" parent="MoveMarkers" index="3" instance=ExtResource("2_cy8ee")]
+position = Vector2(431.381, 158.584)
+
+[node name="MoveMarker5" parent="MoveMarkers" index="4" instance=ExtResource("2_cy8ee")]
+position = Vector2(474.092, 158.584)
+
+[node name="MoveMarker6" parent="MoveMarkers" index="5" instance=ExtResource("2_cy8ee")]
+position = Vector2(528.762, 158.584)
+
+[node name="MoveMarker7" parent="MoveMarkers" index="6" instance=ExtResource("2_cy8ee")]
+position = Vector2(306.665, 157.96)
+
+[node name="MoveMarker8" parent="MoveMarkers" index="7" instance=ExtResource("2_cy8ee")]
+position = Vector2(279.33, 156.711)
+
+[node name="location" parent="locations" index="0" instance=ExtResource("3_juc0v")]
+position = Vector2(173.406, 280.332)
+
+[node name="location2" parent="locations" index="1" instance=ExtResource("3_juc0v")]
+position = Vector2(375.856, 58.0644)

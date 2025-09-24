@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3vwxk6el6l7b"
+path="res://.godot/imported/Go straight.mp3-1577465684ccdf1c72d11f65de4c7c04.mp3str"
+
+[deps]
+
+source_file="res://Audio/School/Go straight.mp3"
+dest_files=["res://.godot/imported/Go straight.mp3-1577465684ccdf1c72d11f65de4c7c04.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

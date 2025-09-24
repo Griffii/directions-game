@@ -1,0 +1,281 @@
+[gd_scene load_steps=21 format=3 uid="uid://v02upfldb2cj"]
+
+[ext_resource type="Script" uid="uid://bfyy8w57a57yo" path="res://Scenes/Level/level.gd" id="1_iesg3"]
+[ext_resource type="PackedScene" uid="uid://bwnmaok0huh34" path="res://Scenes/Player/player.tscn" id="2_006r0"]
+[ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="2_x6cfs"]
+[ext_resource type="PackedScene" uid="uid://dj0i7uvgxu4nm" path="res://Scenes/Object/win_message.tscn" id="4_1iatc"]
+[ext_resource type="Texture2D" uid="uid://cssg5d55sakp2" path="res://assets/icons/PremadeButtons_XRed.png" id="5_nig0n"]
+[ext_resource type="FontFile" uid="uid://cepgij1qabkrs" path="res://assets/fonts/BadComic-Regular.ttf" id="5_uxxae"]
+[ext_resource type="Texture2D" uid="uid://eefhms0uwxi8" path="res://assets/icons/PremadeButtons_XWhiteOutline.png" id="6_uxxae"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gklj6"]
+font = ExtResource("5_uxxae")
+font_size = 50
+font_color = Color(0.145098, 0.145098, 0.145098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nig0n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o1g1d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ve4c"]
+bg_color = Color(0.36065, 0.702495, 0.968247, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xerb2"]
+bg_color = Color(0.105888, 0.506855, 0.771274, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toevt"]
+bg_color = Color(0.247337, 0.648463, 0.940948, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsyjl"]
+bg_color = Color(0.36065, 0.702495, 0.968247, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx3j0"]
+bg_color = Color(0.105888, 0.506855, 0.771274, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ah6f1"]
+bg_color = Color(0.247337, 0.648463, 0.940948, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6f0v8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jma8p"]
+bg_color = Color(0.36065, 0.702495, 0.968247, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqopy"]
+bg_color = Color(0.105888, 0.506855, 0.771274, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbet1"]
+bg_color = Color(0.247337, 0.648463, 0.940948, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_bottom_right = 20
+
+[node name="BaseLevel" type="Node2D"]
+script = ExtResource("1_iesg3")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(683, 384)
+texture = ExtResource("2_x6cfs")
+
+[node name="map" type="Sprite2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_006r0")]
+position = Vector2(578, 352)
+
+[node name="MoveMarkers" type="Node2D" parent="."]
+
+[node name="locations" type="Node2D" parent="."]
+
+[node name="WinMessage" parent="." instance=ExtResource("4_1iatc")]
+unique_name_in_owner = true
+
+[node name="UI_Layer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 966.0
+offset_top = 27.0
+offset_right = 1348.0
+offset_bottom = 759.0
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_Layer"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -354.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Sentence_Box" type="VBoxContainer" parent="UI_Layer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Sentence Container" type="CenterContainer" parent="UI_Layer/MarginContainer/Sentence_Box"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="UI_Layer/MarginContainer/Sentence_Box/Sentence Container"]
+custom_minimum_size = Vector2(310, 0)
+layout_mode = 2
+text = "Enter Sentence"
+label_settings = SubResource("LabelSettings_gklj6")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Buttons_Box" type="VBoxContainer" parent="UI_Layer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Move Marker image" type="CheckButton" parent="UI_Layer/MarginContainer/Buttons_Box"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_uxxae")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nig0n")
+text = "Move Marker"
+
+[node name="Directions_Button_Container" type="MarginContainer" parent="UI_Layer/MarginContainer/Buttons_Box"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI_Layer/MarginContainer/Buttons_Box/Directions_Button_Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Go_Straight" type="Button" parent="UI_Layer/MarginContainer/Buttons_Box/Directions_Button_Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_uxxae")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o1g1d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ve4c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xerb2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_toevt")
+action_mode = 0
+text = "Go Straight"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_Layer/MarginContainer/Buttons_Box/Directions_Button_Container/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Turn_Left" type="Button" parent="UI_Layer/MarginContainer/Buttons_Box/Directions_Button_Container/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(175, 85)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_uxxae")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o1g1d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jsyjl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qx3j0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ah6f1")
+action_mode = 0
+text = "Turn Left"
+
+[node name="Turn_Right" type="Button" parent="UI_Layer/MarginContainer/Buttons_Box/Directions_Button_Container/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(175, 85)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_uxxae")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6f0v8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jma8p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mqopy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lbet1")
+action_mode = 0
+text = "Turn Right"
+
+[node name="Left Panel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 979.0
+offset_bottom = 756.0
+
+[node name="Close_Button" type="TextureButton" parent="."]
+offset_left = 1295.0
+offset_top = 4.0
+offset_right = 1561.0
+offset_bottom = 271.0
+scale = Vector2(0.25, 0.25)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_nig0n")
+texture_pressed = ExtResource("5_nig0n")
+texture_hover = ExtResource("6_uxxae")
+
+[connection signal="toggled" from="UI_Layer/MarginContainer/Buttons_Box/Move Marker image" to="." method="_on_move_marker_image_toggled"]
+[connection signal="pressed" from="UI_Layer/MarginContainer/Buttons_Box/Directions_Button_Container/VBoxContainer/Go_Straight" to="Player" method="_on_go_straight_pressed"]
+[connection signal="pressed" from="UI_Layer/MarginContainer/Buttons_Box/Directions_Button_Container/VBoxContainer/HBoxContainer/Turn_Left" to="Player" method="_on_turn_left_pressed"]
+[connection signal="pressed" from="UI_Layer/MarginContainer/Buttons_Box/Directions_Button_Container/VBoxContainer/HBoxContainer/Turn_Right" to="Player" method="_on_turn_right_pressed"]
+[connection signal="pressed" from="Close_Button" to="." method="_on_menu_pressed"]

@@ -1,0 +1,271 @@
+[gd_scene load_steps=27 format=3 uid="uid://c3qj35mhyyweu"]
+
+[ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_3tu1v"]
+[ext_resource type="Texture2D" uid="uid://bq4ih36w1vtb2" path="res://Graphics/MySprites/School/blank school.png" id="2_8mloe"]
+[ext_resource type="Script" uid="uid://dgrnqmc8rpvy4" path="res://Scenes/Level/Single Player/new_to_school.gd" id="2_ftx23"]
+[ext_resource type="PackedScene" uid="uid://d01bedihw8m7t" path="res://Scenes/Object/pic_create_a_level.tscn" id="3_empho"]
+[ext_resource type="PackedScene" uid="uid://dc832o2pihxmn" path="res://Scenes/Object/move_m_image.tscn" id="4_25t68"]
+[ext_resource type="Texture2D" uid="uid://cx0ylhrkuh6qy" path="res://Graphics/MySprites/School/Gym.png" id="5_1mj08"]
+[ext_resource type="Texture2D" uid="uid://cuc8j5y72ixfw" path="res://Graphics/MySprites/School/Library.png" id="5_bcown"]
+[ext_resource type="Texture2D" uid="uid://dfsw0lmp1g007" path="res://Graphics/MySprites/School/Classroom.png" id="5_uvp0c"]
+[ext_resource type="Texture2D" uid="uid://65lsboc3gnln" path="res://Graphics/MySprites/School/Music room.png" id="6_847e2"]
+[ext_resource type="Texture2D" uid="uid://ceei3rmuqvjdx" path="res://Graphics/MySprites/School/Science room.png" id="6_j6ti2"]
+[ext_resource type="Texture2D" uid="uid://btdcyu60w25x" path="res://Graphics/MySprites/School/Art room.png" id="7_lblvn"]
+[ext_resource type="Texture2D" uid="uid://bvc20qj3aux8a" path="res://Graphics/MySprites/School/Restroom.png" id="8_5lt32"]
+[ext_resource type="Texture2D" uid="uid://gtdvxthr66lo" path="res://Graphics/MySprites/School/Computer room.png" id="8_cqfpj"]
+[ext_resource type="Texture2D" uid="uid://bp7wl6tl5fovw" path="res://Graphics/MySprites/School/Principal_s office.png" id="8_ranur"]
+[ext_resource type="Texture2D" uid="uid://2a848kunhahj" path="res://Graphics/MySprites/School/English room.png" id="9_qxdu5"]
+[ext_resource type="Texture2D" uid="uid://d041wwh0r7oco" path="res://Graphics/MySprites/School/School nurse_s office.png" id="14_hdswb"]
+[ext_resource type="Texture2D" uid="uid://dxf6872707kyq" path="res://Graphics/MySprites/School/Cooking room.png" id="15_wixw6"]
+[ext_resource type="Texture2D" uid="uid://bnbsu01perlc4" path="res://Graphics/MySprites/School/Lunch room.png" id="16_6bwsw"]
+[ext_resource type="Texture2D" uid="uid://c8jhppwd2n8qr" path="res://Graphics/MySprites/School/Teachers office.png" id="16_35nf2"]
+[ext_resource type="Texture2D" uid="uid://c031erp4hfud2" path="res://Graphics/MySprites/School/Playground.png" id="19_wbdby"]
+[ext_resource type="AudioStream" uid="uid://brfrw1t74mvw8" path="res://Audio/School/Where is the classroom.mp3" id="21_7jtrb"]
+[ext_resource type="AudioStream" uid="uid://d3vwxk6el6l7b" path="res://Audio/School/Go straight.mp3" id="22_fuqru"]
+[ext_resource type="AudioStream" uid="uid://cc3bsefahuhp" path="res://Audio/School/Turn left.mp3" id="23_ihoj1"]
+[ext_resource type="AudioStream" uid="uid://d3y7e376ihoy" path="res://Audio/School/Turn RIght.mp3" id="24_i7euu"]
+[ext_resource type="AudioStream" uid="uid://dat51u6ymr5nv" path="res://Audio/School/Where is the gym.mp3" id="25_ek048"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c0igr"]
+
+[node name="SP_New to school" instance=ExtResource("1_3tu1v")]
+script = ExtResource("2_ftx23")
+
+[node name="map" parent="." index="1"]
+position = Vector2(493.5, 381.5)
+scale = Vector2(0.719619, 0.99349)
+texture = ExtResource("2_8mloe")
+
+[node name="Player" parent="." index="2"]
+position = Vector2(316, 177)
+scale = Vector2(0.7, 0.7)
+
+[node name="Move Marker image" parent="Control/buttonbox" index="0"]
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c0igr")
+
+[node name="Library" parent="Left Panel" index="0" instance=ExtResource("3_empho")]
+visible = false
+layout_mode = 0
+offset_left = -8.0
+offset_top = 16.0
+offset_right = 131.0
+offset_bottom = 190.0
+texture = ExtResource("5_bcown")
+
+[node name="Science Room" parent="Left Panel" index="1" instance=ExtResource("3_empho")]
+visible = false
+layout_mode = 0
+offset_left = 600.0
+offset_top = 570.0
+offset_right = 739.0
+offset_bottom = 744.0
+texture = ExtResource("6_j6ti2")
+
+[node name="Arts and Crafts room" parent="Left Panel" index="2" instance=ExtResource("3_empho")]
+visible = false
+layout_mode = 0
+offset_left = 825.0
+offset_top = 393.0
+offset_right = 964.0
+offset_bottom = 567.0
+texture = ExtResource("7_lblvn")
+
+[node name="Gym" parent="Left Panel" index="3" instance=ExtResource("3_empho")]
+visible = false
+layout_mode = 0
+offset_left = 827.0
+offset_top = 575.0
+offset_right = 966.0
+offset_bottom = 749.0
+texture = ExtResource("5_1mj08")
+
+[node name="English room" parent="Left Panel" index="4" instance=ExtResource("3_empho")]
+visible = false
+layout_mode = 0
+offset_left = 598.0
+offset_top = 365.0
+offset_right = 737.0
+offset_bottom = 539.0
+texture = ExtResource("9_qxdu5")
+
+[node name="Music room" parent="Left Panel" index="5" instance=ExtResource("3_empho")]
+visible = false
+layout_mode = 0
+offset_left = 824.0
+offset_top = 205.0
+offset_right = 963.0
+offset_bottom = 379.0
+texture = ExtResource("6_847e2")
+
+[node name="Restroom" parent="Left Panel" index="6" instance=ExtResource("3_empho")]
+visible = false
+layout_mode = 0
+offset_left = 595.0
+offset_top = 22.0
+offset_right = 734.0
+offset_bottom = 196.0
+texture = ExtResource("8_5lt32")
+
+[node name="Computer room" parent="Left Panel" index="7" instance=ExtResource("3_empho")]
+visible = false
+layout_mode = 0
+offset_left = 824.0
+offset_top = 18.0
+offset_right = 963.0
+offset_bottom = 192.0
+texture = ExtResource("8_cqfpj")
+
+[node name="Classroom" parent="Left Panel" index="8" instance=ExtResource("3_empho")]
+visible = false
+layout_mode = 0
+offset_left = 236.0
+offset_top = 19.0
+offset_right = 375.0
+offset_bottom = 193.0
+texture = ExtResource("5_uvp0c")
+
+[node name="School nurse\'s office" parent="Left Panel" index="9" instance=ExtResource("3_empho")]
+visible = false
+layout_mode = 0
+offset_left = -6.0
+offset_top = 203.0
+offset_right = 133.0
+offset_bottom = 377.0
+texture = ExtResource("14_hdswb")
+
+[node name="Principal\'s office" parent="Left Panel" index="10" instance=ExtResource("3_empho")]
+visible = false
+layout_mode = 0
+offset_left = -8.0
+offset_top = 384.0
+offset_right = 131.0
+offset_bottom = 558.0
+texture = ExtResource("8_ranur")
+
+[node name="Teachers office" parent="Left Panel" index="11" instance=ExtResource("3_empho")]
+visible = false
+layout_mode = 0
+offset_left = 217.0
+offset_top = 372.0
+offset_right = 356.0
+offset_bottom = 546.0
+texture = ExtResource("16_35nf2")
+
+[node name="Cooking room" parent="Left Panel" index="12" instance=ExtResource("3_empho")]
+visible = false
+layout_mode = 0
+offset_left = -5.0
+offset_top = 570.0
+offset_right = 134.0
+offset_bottom = 744.0
+texture = ExtResource("15_wixw6")
+
+[node name="Lunch room" parent="Left Panel" index="13" instance=ExtResource("3_empho")]
+visible = false
+layout_mode = 0
+offset_left = 220.0
+offset_top = 573.0
+offset_right = 359.0
+offset_bottom = 747.0
+texture = ExtResource("16_6bwsw")
+
+[node name="Playground" parent="Left Panel" index="14" instance=ExtResource("3_empho")]
+visible = false
+layout_mode = 0
+offset_left = 385.0
+offset_top = 508.0
+offset_right = 578.0
+offset_bottom = 709.0
+texture = ExtResource("19_wbdby")
+
+[node name="MoveMarker" parent="Left Panel" index="15" instance=ExtResource("4_25t68")]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 269.0
+offset_right = 494.0
+offset_bottom = 284.0
+
+[node name="MoveMarker2" parent="Left Panel" index="16" instance=ExtResource("4_25t68")]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 269.0
+offset_right = 309.0
+offset_bottom = 284.0
+
+[node name="MoveMarker3" parent="Left Panel" index="17" instance=ExtResource("4_25t68")]
+layout_mode = 0
+offset_left = 653.0
+offset_top = 265.0
+offset_right = 668.0
+offset_bottom = 280.0
+
+[node name="MoveMarker4" parent="Left Panel" index="18" instance=ExtResource("4_25t68")]
+layout_mode = 0
+offset_left = 772.0
+offset_top = 268.0
+offset_right = 787.0
+offset_bottom = 283.0
+
+[node name="MoveMarker5" parent="Left Panel" index="19" instance=ExtResource("4_25t68")]
+layout_mode = 0
+offset_left = 775.0
+offset_top = 94.0
+offset_right = 790.0
+offset_bottom = 109.0
+
+[node name="MoveMarker6" parent="Left Panel" index="20" instance=ExtResource("4_25t68")]
+layout_mode = 0
+offset_left = 773.0
+offset_top = 447.0
+offset_right = 788.0
+offset_bottom = 462.0
+
+[node name="MoveMarker7" parent="Left Panel" index="21" instance=ExtResource("4_25t68")]
+layout_mode = 0
+offset_left = 777.0
+offset_top = 645.0
+offset_right = 792.0
+offset_bottom = 660.0
+
+[node name="MoveMarker8" parent="Left Panel" index="22" instance=ExtResource("4_25t68")]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 267.0
+offset_right = 186.0
+offset_bottom = 282.0
+
+[node name="MoveMarker9" parent="Left Panel" index="23" instance=ExtResource("4_25t68")]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 85.0
+offset_right = 184.0
+offset_bottom = 100.0
+
+[node name="MoveMarker10" parent="Left Panel" index="24" instance=ExtResource("4_25t68")]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 453.0
+offset_right = 184.0
+offset_bottom = 468.0
+
+[node name="MoveMarker11" parent="Left Panel" index="25" instance=ExtResource("4_25t68")]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 649.0
+offset_right = 182.0
+offset_bottom = 664.0
+
+[node name="where is the classroom" type="AudioStreamPlayer" parent="." index="10"]
+stream = ExtResource("21_7jtrb")
+
+[node name="go straight" type="AudioStreamPlayer" parent="." index="11"]
+stream = ExtResource("22_fuqru")
+
+[node name="turn left" type="AudioStreamPlayer" parent="." index="12"]
+stream = ExtResource("23_ihoj1")
+
+[node name="turn right" type="AudioStreamPlayer" parent="." index="13"]
+stream = ExtResource("24_i7euu")
+
+[node name="Where is the gym" type="AudioStreamPlayer" parent="." index="14"]
+stream = ExtResource("25_ek048")

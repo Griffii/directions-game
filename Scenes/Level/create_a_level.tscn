@@ -1,0 +1,499 @@
+[gd_scene load_steps=48 format=3 uid="uid://b27wsx4vp6bol"]
+
+[ext_resource type="Script" uid="uid://y8gvpkc3ijc" path="res://Scenes/Level/create_a_level.gd" id="1_c4j5u"]
+[ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="1_mojmm"]
+[ext_resource type="Texture2D" uid="uid://gydek451unbl" path="res://Graphics/MySprites/City2.0/BlankTown.png" id="2_tycgg"]
+[ext_resource type="Texture2D" uid="uid://mih7y6boqm85" path="res://Graphics/MySprites/City2.0/School.png" id="4_er70v"]
+[ext_resource type="Texture2D" uid="uid://p6b4ybglkfln" path="res://Graphics/MySprites/City2.0/BTownV2.png" id="4_l2whb"]
+[ext_resource type="Texture2D" uid="uid://bap2eeaf248i5" path="res://Graphics/MySprites/City2.0/Hospital.png" id="5_dxe0t"]
+[ext_resource type="Texture2D" uid="uid://c6vd6vwp4qw7y" path="res://Graphics/MySprites/Player-front.png" id="5_hoy1s"]
+[ext_resource type="Texture2D" uid="uid://doyqfsdrf7yc1" path="res://Graphics/MySprites/City2.0/PostOffice.png" id="6_2yg4p"]
+[ext_resource type="Texture2D" uid="uid://bd3bsfxg1s036" path="res://Graphics/MySprites/City2.0/PoliceStation.png" id="6_dp23y"]
+[ext_resource type="Script" uid="uid://b4aj4vwr25asv" path="res://Scenes/Object/Draggable.gd" id="6_ignpu"]
+[ext_resource type="Texture2D" uid="uid://vxnm805cpfqa" path="res://Graphics/MySprites/City2.0/Supermarket.png" id="8_4jxp7"]
+[ext_resource type="Texture2D" uid="uid://b35slfix1wgp1" path="res://Graphics/MySprites/UI/LocationBox.png" id="14_c5f6f"]
+[ext_resource type="Texture2D" uid="uid://bo15ctbibhoih" path="res://Graphics/MySprites/City2.0/Firestation.png" id="14_rjkcp"]
+[ext_resource type="Texture2D" uid="uid://c36vg45x7vsyh" path="res://Graphics/MySprites/City2.0/Park1.png" id="14_thvyl"]
+[ext_resource type="Texture2D" uid="uid://s3rn7rvvpnew" path="res://Graphics/MySprites/City2.0/Restaurant.png" id="15_irc2c"]
+[ext_resource type="Script" uid="uid://caf4gcof47ueg" path="res://Scenes/Object/Dragable UL.gd" id="15_xelxr"]
+[ext_resource type="Script" uid="uid://cbbalm40nk16i" path="res://Scenes/Object/mmButton.gd" id="16_koqqs"]
+[ext_resource type="Texture2D" uid="uid://dn4ulwcc5tbpw" path="res://Graphics/MySprites/City2.0/Conbini.png" id="16_nmhk7"]
+[ext_resource type="Texture2D" uid="uid://bchbj3x74iyor" path="res://Graphics/MySprites/City2.0/Stadium.png" id="16_pwwhj"]
+[ext_resource type="Texture2D" uid="uid://dymdcycfv5nhu" path="res://Graphics/MySprites/UI/MoveMarkerImage.png" id="16_yjipw"]
+[ext_resource type="Texture2D" uid="uid://b5hp7or63ghqa" path="res://Graphics/MySprites/City2.0/Museum.png" id="17_qf0vh"]
+[ext_resource type="Texture2D" uid="uid://diqhpkq40idy3" path="res://Graphics/MySprites/City2.0/Factory.png" id="18_fsn17"]
+[ext_resource type="Script" uid="uid://cjead35g74hmp" path="res://Scenes/Object/mapPanel.gd" id="18_ip8dr"]
+[ext_resource type="Texture2D" uid="uid://drhyh7e1o031s" path="res://Graphics/MySprites/City2.0/Department Store.png" id="19_srqd8"]
+[ext_resource type="Texture2D" uid="uid://bae47yjxnx2eu" path="res://Graphics/MySprites/City2.0/Bookstore.png" id="20_fajrx"]
+[ext_resource type="Texture2D" uid="uid://dgq5blhu8v0gb" path="res://Graphics/MySprites/City2.0/Aquarium.png" id="21_huac5"]
+[ext_resource type="Texture2D" uid="uid://c1iq35gtvjqlp" path="res://Graphics/MySprites/City2.0/Bank.png" id="22_wh8ew"]
+[ext_resource type="Texture2D" uid="uid://mqb5rk48cyig" path="res://Graphics/MySprites/City2.0/Gym.png" id="23_48vd7"]
+[ext_resource type="Texture2D" uid="uid://dmv4vf85i5tub" path="res://Graphics/MySprites/City2.0/Hotel.png" id="24_gi2th"]
+[ext_resource type="Texture2D" uid="uid://bys1hdsihecvk" path="res://Graphics/MySprites/City2.0/Library.png" id="25_2mbwq"]
+[ext_resource type="Texture2D" uid="uid://d2i0thev47lfc" path="res://Graphics/MySprites/City2.0/Pet Store.png" id="26_ew4tc"]
+[ext_resource type="Texture2D" uid="uid://bdha2lttjkdt0" path="res://Graphics/MySprites/City2.0/Petrol Station.png" id="27_niuka"]
+[ext_resource type="Texture2D" uid="uid://droolwshid4ld" path="res://Graphics/MySprites/City2.0/Shrine.png" id="28_mvk6o"]
+[ext_resource type="Texture2D" uid="uid://c4uky7yd2ur33" path="res://Graphics/MySprites/City2.0/Vet.png" id="29_i563g"]
+[ext_resource type="Texture2D" uid="uid://deg0scvpl625u" path="res://Graphics/MySprites/City2.0/Temple.png" id="30_bijfu"]
+[ext_resource type="Texture2D" uid="uid://bc5e3rlix6jjl" path="res://Graphics/MySprites/City2.0/Station.png" id="31_l6467"]
+[ext_resource type="Texture2D" uid="uid://m0g52tnqqm2c" path="res://Graphics/MySprites/City2.0/Amusement Park.png" id="32_rj6ha"]
+[ext_resource type="Texture2D" uid="uid://skclxbw4iq4a" path="res://Graphics/MySprites/City2.0/Zoo.png" id="33_w22li"]
+[ext_resource type="FontFile" uid="uid://cepgij1qabkrs" path="res://assets/fonts/BadComic-Regular.ttf" id="38_e1qxo"]
+[ext_resource type="Texture2D" uid="uid://cssg5d55sakp2" path="res://assets/icons/PremadeButtons_XRed.png" id="39_tpxsc"]
+[ext_resource type="Texture2D" uid="uid://eefhms0uwxi8" path="res://assets/icons/PremadeButtons_XWhiteOutline.png" id="40_e1qxo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e1qxo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwpeq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7q17o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwpeq"]
+bg_color = Color(0.692909, 0.903505, 0.391817, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sp8m5"]
+bg_color = Color(0.534468, 0.71551, 0.261493, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.683077, 0.683077, 0.683077, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5kby"]
+bg_color = Color(0.588235, 0.784314, 0.294118, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+shadow_size = 3
+
+[node name="Create-a-Level" type="Node2D"]
+script = ExtResource("1_c4j5u")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(683, 384)
+texture = ExtResource("1_mojmm")
+
+[node name="RightPanel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 983.0
+offset_top = 17.0
+offset_right = 1364.0
+offset_bottom = 754.0
+
+[node name="CenterContainer" type="CenterContainer" parent="RightPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -11.0
+offset_right = -6.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RightPanel/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TabContainer" type="TabContainer" parent="RightPanel/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(340, 650)
+layout_mode = 2
+current_tab = 0
+clip_tabs = false
+drag_to_rearrange_enabled = true
+tab_focus_mode = 0
+
+[node name="Pick a Map" type="ScrollContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Map instructions" type="Label" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "Pick a default map below, or drag and drop an image file onto the paper."
+autowrap_mode = 3
+clip_text = true
+
+[node name="blankmapButton" type="TextureButton" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(290, 160)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_tycgg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BlankV2" type="TextureButton" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(290, 160)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_l2whb")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Player size instructions" type="Label" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Adjust the player size:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="TextureButton" type="TextureButton" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 72)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_hoy1s")
+stretch_mode = 0
+
+[node name="Smaller" type="Button" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e1qxo")
+text = "Smaller
+"
+
+[node name="Bigger" type="Button" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qwpeq")
+text = "Bigger
+"
+
+[node name="Locations" type="HBoxContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = -3
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 5
+
+[node name="Scrollbox" type="ScrollContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Police Station" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+texture = ExtResource("6_dp23y")
+stretch_mode = 3
+script = ExtResource("6_ignpu")
+
+[node name="Hospital" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("5_dxe0t")
+stretch_mode = 3
+script = ExtResource("6_ignpu")
+
+[node name="Post Office" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("6_2yg4p")
+stretch_mode = 3
+script = ExtResource("6_ignpu")
+
+[node name="School" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("4_er70v")
+stretch_mode = 3
+script = ExtResource("6_ignpu")
+
+[node name="Supermarket" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("8_4jxp7")
+stretch_mode = 3
+script = ExtResource("6_ignpu")
+
+[node name="Park" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("14_thvyl")
+stretch_mode = 3
+script = ExtResource("6_ignpu")
+
+[node name="Convinience Store" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("16_nmhk7")
+stretch_mode = 3
+script = ExtResource("6_ignpu")
+
+[node name="Fire Station" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("14_rjkcp")
+script = ExtResource("6_ignpu")
+
+[node name="Restaurant" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("15_irc2c")
+script = ExtResource("6_ignpu")
+
+[node name="Stadium" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("16_pwwhj")
+script = ExtResource("6_ignpu")
+
+[node name="Museum" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("17_qf0vh")
+script = ExtResource("6_ignpu")
+
+[node name="Factory" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("18_fsn17")
+script = ExtResource("6_ignpu")
+
+[node name="Department Store" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("19_srqd8")
+script = ExtResource("6_ignpu")
+
+[node name="Bookstore" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("20_fajrx")
+script = ExtResource("6_ignpu")
+
+[node name="Aquarium" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("21_huac5")
+script = ExtResource("6_ignpu")
+
+[node name="Bank" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("22_wh8ew")
+script = ExtResource("6_ignpu")
+
+[node name="Gym" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("23_48vd7")
+script = ExtResource("6_ignpu")
+
+[node name="Hotel" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("24_gi2th")
+script = ExtResource("6_ignpu")
+
+[node name="Library" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("25_2mbwq")
+script = ExtResource("6_ignpu")
+
+[node name="Pet Store" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("26_ew4tc")
+script = ExtResource("6_ignpu")
+
+[node name="Gas Station" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("27_niuka")
+script = ExtResource("6_ignpu")
+
+[node name="Shrine" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("28_mvk6o")
+script = ExtResource("6_ignpu")
+
+[node name="Vet" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("29_i563g")
+script = ExtResource("6_ignpu")
+
+[node name="Temple" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("30_bijfu")
+script = ExtResource("6_ignpu")
+
+[node name="Train Station" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("31_l6467")
+script = ExtResource("6_ignpu")
+
+[node name="Amusement park" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("32_rj6ha")
+script = ExtResource("6_ignpu")
+
+[node name="Zoo" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("33_w22li")
+script = ExtResource("6_ignpu")
+
+[node name="MarginContainer2" type="MarginContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Instructions" type="Label" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2"]
+custom_minimum_size = Vector2(130, 100)
+layout_mode = 2
+text = "Click and drag a location or move marker into the map!"
+autowrap_mode = 3
+
+[node name="Unique Location" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+texture = ExtResource("14_c5f6f")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("15_xelxr")
+
+[node name="location Smaller" type="Button" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="location Bigger" type="Button" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 25
+text = "+"
+
+[node name="mm" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("16_yjipw")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("16_koqqs")
+
+[node name="play-button" type="Button" parent="RightPanel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("38_e1qxo")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7q17o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qwpeq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sp8m5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h5kby")
+text = "Start!"
+
+[node name="mapPanel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 9.0
+offset_top = 14.0
+offset_right = 969.0
+offset_bottom = 755.0
+script = ExtResource("18_ip8dr")
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 4
+size = Vector2i(392, 300)
+ok_button_text = "Open"
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+use_native_dialog = true
+
+[node name="Esc button" type="TextureButton" parent="."]
+z_index = 100
+offset_left = 1297.0
+offset_top = 3.0
+offset_right = 1563.0
+offset_bottom = 270.0
+scale = Vector2(0.25, 0.25)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("39_tpxsc")
+texture_pressed = ExtResource("39_tpxsc")
+texture_hover = ExtResource("40_e1qxo")
+
+[connection signal="button_up" from="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/blankmapButton" to="." method="_on_blankmap_button_button_up"]
+[connection signal="pressed" from="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/BlankV2" to="." method="_on_blank_v_2_pressed"]
+[connection signal="pressed" from="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer/Smaller" to="." method="_on_smaller_pressed"]
+[connection signal="pressed" from="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer/Bigger" to="." method="_on_bigger_pressed"]
+[connection signal="pressed" from="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2/location Smaller" to="." method="_on_location_smaller_pressed"]
+[connection signal="pressed" from="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2/location Bigger" to="." method="_on_location_bigger_pressed"]
+[connection signal="pressed" from="RightPanel/CenterContainer/VBoxContainer/play-button" to="." method="_on_button_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="Esc button" to="." method="_on_esc_button_pressed"]

@@ -1,0 +1,337 @@
+[gd_scene load_steps=17 format=3 uid="uid://c72h3thwrq1gr"]
+
+[ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_ry7sm"]
+[ext_resource type="Texture2D" uid="uid://p6b4ybglkfln" path="res://Graphics/MySprites/City2.0/BTownV2.png" id="2_irw86"]
+[ext_resource type="Texture2D" uid="uid://dn4ulwcc5tbpw" path="res://Graphics/MySprites/City2.0/Conbini.png" id="4_0y2q2"]
+[ext_resource type="PackedScene" uid="uid://d01bedihw8m7t" path="res://Scenes/Object/pic_create_a_level.tscn" id="4_dc2vv"]
+[ext_resource type="Texture2D" uid="uid://bo15ctbibhoih" path="res://Graphics/MySprites/City2.0/Firestation.png" id="7_6hdkk"]
+[ext_resource type="Texture2D" uid="uid://bchbj3x74iyor" path="res://Graphics/MySprites/City2.0/Stadium.png" id="8_dgx65"]
+[ext_resource type="Texture2D" uid="uid://s3rn7rvvpnew" path="res://Graphics/MySprites/City2.0/Restaurant.png" id="9_pc64v"]
+[ext_resource type="Texture2D" uid="uid://bd3bsfxg1s036" path="res://Graphics/MySprites/City2.0/PoliceStation.png" id="10_jeutu"]
+[ext_resource type="Texture2D" uid="uid://mih7y6boqm85" path="res://Graphics/MySprites/City2.0/School.png" id="11_27a27"]
+[ext_resource type="Texture2D" uid="uid://doyqfsdrf7yc1" path="res://Graphics/MySprites/City2.0/PostOffice.png" id="12_givx7"]
+[ext_resource type="Texture2D" uid="uid://bap2eeaf248i5" path="res://Graphics/MySprites/City2.0/Hospital.png" id="13_tnj6f"]
+[ext_resource type="Texture2D" uid="uid://c36vg45x7vsyh" path="res://Graphics/MySprites/City2.0/Park1.png" id="14_2xxuk"]
+[ext_resource type="Texture2D" uid="uid://c1iq35gtvjqlp" path="res://Graphics/MySprites/City2.0/Bank.png" id="14_p0mtl"]
+[ext_resource type="PackedScene" uid="uid://dc832o2pihxmn" path="res://Scenes/Object/move_m_image.tscn" id="15_dr4mm"]
+[ext_resource type="Texture2D" uid="uid://deg0scvpl625u" path="res://Graphics/MySprites/City2.0/Temple.png" id="15_s5tu3"]
+[ext_resource type="Texture2D" uid="uid://vxnm805cpfqa" path="res://Graphics/MySprites/City2.0/Supermarket.png" id="15_vja0t"]
+
+[node name="BaseLevel" instance=ExtResource("1_ry7sm")]
+
+[node name="map" parent="." index="1"]
+position = Vector2(4, 5)
+scale = Vector2(0.988934, 1.38069)
+texture = ExtResource("2_irw86")
+centered = false
+
+[node name="Player" parent="." index="2"]
+scale = Vector2(0.7, 0.7)
+
+[node name="Convenience Store" parent="Left Panel" index="0" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 854.0
+offset_top = 410.0
+offset_right = 971.0
+offset_bottom = 490.0
+texture = ExtResource("4_0y2q2")
+
+[node name="Fire Station" parent="Left Panel" index="1" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 479.0
+offset_right = 300.0
+offset_bottom = 641.0
+texture = ExtResource("7_6hdkk")
+
+[node name="Stadium" parent="Left Panel" index="2" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 654.0
+offset_top = 94.0
+offset_right = 901.0
+offset_bottom = 302.0
+texture = ExtResource("8_dgx65")
+
+[node name="Restaurant" parent="Left Panel" index="3" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 113.0
+offset_right = 295.0
+offset_bottom = 283.0
+texture = ExtResource("9_pc64v")
+
+[node name="Police Station" parent="Left Panel" index="4" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 295.0
+offset_right = 289.0
+offset_bottom = 446.0
+texture = ExtResource("10_jeutu")
+
+[node name="School" parent="Left Panel" index="5" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 439.0
+offset_right = 579.0
+offset_bottom = 605.0
+texture = ExtResource("11_27a27")
+
+[node name="Post Office" parent="Left Panel" index="6" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 642.0
+offset_right = 777.0
+offset_bottom = 756.0
+texture = ExtResource("12_givx7")
+
+[node name="Hospital" parent="Left Panel" index="7" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 107.0
+offset_right = 576.0
+offset_bottom = 290.0
+texture = ExtResource("13_tnj6f")
+
+[node name="Park" parent="Left Panel" index="8" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 857.0
+offset_top = 657.0
+offset_right = 965.0
+offset_bottom = 729.0
+texture = ExtResource("14_2xxuk")
+
+[node name="Supermarket" parent="Left Panel" index="9" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 652.0
+offset_top = 406.0
+offset_right = 781.0
+offset_bottom = 489.0
+texture = ExtResource("15_vja0t")
+
+[node name="Bank" parent="Left Panel" index="10" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 533.0
+offset_right = 890.0
+offset_bottom = 573.0
+scale = Vector2(3.13356, 2.37211)
+texture = ExtResource("14_p0mtl")
+
+[node name="Temple" parent="Left Panel" index="11" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 653.0
+offset_top = 528.0
+offset_right = 693.0
+offset_bottom = 568.0
+scale = Vector2(3.23402, 2.34105)
+texture = ExtResource("15_s5tu3")
+
+[node name="MoveMarker" parent="Left Panel" index="12" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 807.0
+offset_top = 690.0
+offset_right = 822.0
+offset_bottom = 705.0
+
+[node name="MoveMarker2" parent="Left Panel" index="13" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 563.0
+offset_right = 823.0
+offset_bottom = 578.0
+
+[node name="MoveMarker3" parent="Left Panel" index="14" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 444.0
+offset_right = 823.0
+offset_bottom = 459.0
+
+[node name="MoveMarker4" parent="Left Panel" index="15" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 350.0
+offset_right = 820.0
+offset_bottom = 365.0
+
+[node name="MoveMarker5" parent="Left Panel" index="16" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 349.0
+offset_right = 943.0
+offset_bottom = 364.0
+
+[node name="MoveMarker6" parent="Left Panel" index="17" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 187.0
+offset_right = 945.0
+offset_bottom = 202.0
+
+[node name="MoveMarker7" parent="Left Panel" index="18" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 36.0
+offset_right = 943.0
+offset_bottom = 51.0
+
+[node name="MoveMarker8" parent="Left Panel" index="19" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 777.0
+offset_top = 36.0
+offset_right = 792.0
+offset_bottom = 51.0
+
+[node name="MoveMarker9" parent="Left Panel" index="20" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 607.0
+offset_top = 33.0
+offset_right = 622.0
+offset_bottom = 48.0
+
+[node name="MoveMarker10" parent="Left Panel" index="21" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 33.0
+offset_right = 482.0
+offset_bottom = 48.0
+
+[node name="MoveMarker11" parent="Left Panel" index="22" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 28.0
+offset_right = 340.0
+offset_bottom = 43.0
+
+[node name="MoveMarker12" parent="Left Panel" index="23" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 31.0
+offset_right = 189.0
+offset_bottom = 46.0
+
+[node name="MoveMarker13" parent="Left Panel" index="24" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 32.0
+offset_right = 27.0
+offset_bottom = 47.0
+
+[node name="MoveMarker14" parent="Left Panel" index="25" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 196.0
+offset_right = 19.0
+offset_bottom = 211.0
+
+[node name="MoveMarker15" parent="Left Panel" index="26" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 372.0
+offset_right = 27.0
+offset_bottom = 387.0
+
+[node name="MoveMarker16" parent="Left Panel" index="27" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 560.0
+offset_right = 23.0
+offset_bottom = 575.0
+
+[node name="MoveMarker17" parent="Left Panel" index="28" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 698.0
+offset_right = 25.0
+offset_bottom = 713.0
+
+[node name="MoveMarker18" parent="Left Panel" index="29" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 702.0
+offset_right = 183.0
+offset_bottom = 717.0
+
+[node name="MoveMarker19" parent="Left Panel" index="30" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 701.0
+offset_right = 342.0
+offset_bottom = 716.0
+
+[node name="MoveMarker20" parent="Left Panel" index="31" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 701.0
+offset_right = 487.0
+offset_bottom = 716.0
+
+[node name="MoveMarker21" parent="Left Panel" index="32" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 602.0
+offset_top = 695.0
+offset_right = 617.0
+offset_bottom = 710.0
+
+[node name="MoveMarker22" parent="Left Panel" index="33" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 606.0
+offset_top = 553.0
+offset_right = 621.0
+offset_bottom = 568.0
+
+[node name="MoveMarker23" parent="Left Panel" index="34" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 607.0
+offset_top = 442.0
+offset_right = 622.0
+offset_bottom = 457.0
+
+[node name="MoveMarker24" parent="Left Panel" index="35" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 350.0
+offset_right = 725.0
+offset_bottom = 365.0
+
+[node name="MoveMarker25" parent="Left Panel" index="36" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 604.0
+offset_top = 349.0
+offset_right = 619.0
+offset_bottom = 364.0
+
+[node name="MoveMarker26" parent="Left Panel" index="37" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 350.0
+offset_right = 484.0
+offset_bottom = 365.0
+
+[node name="MoveMarker27" parent="Left Panel" index="38" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 351.0
+offset_right = 343.0
+offset_bottom = 366.0
+
+[node name="MoveMarker28" parent="Left Panel" index="39" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 541.0
+offset_right = 345.0
+offset_bottom = 556.0
+
+[node name="MoveMarker29" parent="Left Panel" index="40" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 187.0
+offset_right = 343.0
+offset_bottom = 202.0
+
+[node name="MoveMarker30" parent="Left Panel" index="41" instance=ExtResource("15_dr4mm")]
+layout_mode = 0
+offset_left = 611.0
+offset_top = 189.0
+offset_right = 626.0
+offset_bottom = 204.0
